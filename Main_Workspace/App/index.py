@@ -8,7 +8,9 @@ import cv2
 # from flask_ngrok import run_with_ngrok
 filename=""
 
-classes_list=['Facial acne', 'Melanoma', 'Psoriasis', 'Ringworm']
+# classes_list=['Facial acne', 'Melanoma', 'Psoriasis', 'Ringworm']
+classes_list=['Facial acne', 'Melanoma', 'Psoriasis', 'Ringworm', 'Skin Burn']
+
 def printClassList():
     for class_name in classes_list:
         print(f"{classes_list.index(class_name)} -->  {class_name}")
@@ -51,7 +53,9 @@ def getresult():
             # image_array=image.img_to_array(image_data)
             # image_array_expanded_dimansion=numpy.expand_dims(image_array,axis=0)
             # trained_model=tensorflow.keras.models.load_model('../Model_Implementation/Models/model1_using_only_one_layers.h5')
-            trained_model=tensorflow.keras.models.load_model('../Model_Implementation/Models/model2_using_Complex_architecture.h5')
+            # trained_model=tensorflow.keras.models.load_model('../Model_Implementation/Models/model2_using_Complex_architecture.h5')
+            # trained_model=tensorflow.keras.models.load_model('../Model_Implementation/Models/model2_using_only_one_layers.h5')
+            trained_model=tensorflow.keras.models.load_model('../Model_Implementation/Models/model1_using_Complex_architecture.h5')
             image_array=cv2.imread(os.path.dirname(__file__)+f"\\static\\images\\data\\{filename}",cv2.IMREAD_GRAYSCALE)
             print(image_array)
             image_array=cv2.resize(image_array,(180,180))
