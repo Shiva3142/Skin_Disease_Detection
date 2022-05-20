@@ -1,241 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Skin Disease Detection</title>
-        <script src="../static/javascript/detection.js"></script>
-        <style>
-            @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                outline: none;
-                border: none;
-                color: black;
-                text-decoration: none;
-                list-style: none;
-                transition: all 0.5s;
-                word-wrap: break-word;
-            }
-            a,
-            button,label,span {
-                cursor: pointer;
-            }
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Disease Detection</title>
+    <script src="../static/javascript/detection.js"></script>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            color: black;
+            text-decoration: none;
+            list-style: none;
+            transition: all 0.5s;
+            word-wrap: break-word;
+        }
+
+        a,
+        button,
+        label,
+        span {
+            cursor: pointer;
+        }
+
+        body {
+            background: url("https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80") no-repeat fixed;
+            background-size: cover;
+            font-size: 1em;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            padding: 20px;
+            border: 1px solid gray;
+            background-color: aliceblue;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        nav {
+            min-width: 300px;
+            display: flex;
+            justify-content: space-evenly;
+            /* margin: 15px 0 0 0; */
+            font-size: 1.5em;
+        }
+
+        footer {
+            background-color: #636e72;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.5em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 768px) {
             body {
-                background: url("https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
-                    no-repeat fixed;
-                background-size: cover;
-                font-size: 1em;
+                font-size: 0.5em;
             }
             header {
                 display: flex;
-                justify-content: space-between;
-                align-items: baseline;
-                flex-wrap: wrap;
-                padding: 20px;
-                border: 1px solid gray;
-                background-color: aliceblue;
-            }
-            header h1 {
-                font-size: 2.5em;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
             }
             nav {
-                min-width: 300px;
-                display: flex;
-                justify-content: space-evenly;
-                /* margin: 15px 0 0 0; */
-                font-size: 1.5em;
+                margin-top: 10px;
             }
-            footer {
-                background-color: #636e72;
-                color: white;
-                text-align: center;
-                padding: 15px;
-                font-size: 1.5em;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
+        }
+
+        .green {
+            background-color: green;
+            color: white;
+        }
+
+        .red {
+            color: white;
+            background-color: red;
+        }
+    </style>
+    <style>
+        #inputContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+            position: relative;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #ecf0f1;
+            border: 1px solid gray;
+            min-width: 300px;
+            width: 600px;
+            height: 300px;
+            margin: 30px;
+        }
+
+        form label {
+            padding: 10px 20px;
+            background-color: aqua;
+            font-size: 1.3em;
+            margin: 10px;
+            border-radius: 10px;
+            max-width: 280px;
+        }
+
+        form label:hover {
+            transform: scale(1.2);
+        }
+
+        form button {
+            margin: 20px 0;
+            font-size: 1.8em;
+            padding: 10px 30px;
+            border: 1px solid gray;
+        }
+
+        form button:hover {
+            transform: scale(1.2);
+        }
+
+        form input {
+            display: none;
+        }
+
+        #loader {
+            display: none;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .loader {
+            width: 250px;
+            height: 80px;
+            background-color: #3498db;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border-top: 2px solid red;
+            border-left: 2px solid red;
+            border-radius: 50%;
+            animation: rotate 1s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
             }
-            @media screen and (max-width: 768px) {
-                body {
-                    font-size: 0.5em;
-                }
+
+            100% {
+                transform: rotate(360deg);
             }
-            .green{
-                background-color: green;
-                color: white;
-            }
-            .red{
-                color: white;
-                background-color: red;
-            }
-        </style>
-        <style>
-            #inputContainer{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 70vh;
-                position: relative;
-            }
-            form{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                background: #ecf0f1;
-                border: 1px solid gray;
-                min-width: 300px;
-                width: 600px;
-                height: 300px;
-                margin: 30px;
-            }
-            form label{
-                padding: 10px 20px;
-                background-color: aqua;
-                font-size: 1.3em;
-                margin: 10px;
-                border-radius: 10px;
-                max-width: 280px;
-            }
-            form label:hover{
-                transform: scale(1.2);
-            }
-            form button{
-                margin: 20px 0;
-                font-size: 1.8em;
-                padding: 10px 30px;
-                border: 1px solid gray;
-            }
-            form button:hover{
-                transform: scale(1.2);
-            }
-            form input{
-                display: none;
-            }
-            #loader{
-                display: none;
-                justify-content: center;
-                position: fixed;
-                top: 0;
-                width: 100%;
-                padding: 20px;
-            }
-            .loader{
-                width: 250px;
-                height: 80px;
-                background-color: #3498db;
-                border-radius: 20px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-            }
-            .spinner{
-                width: 50px;
-                height: 50px;
-                border-top: 2px solid red;
-                border-left: 2px solid red;
-                border-radius: 50%;
-                animation: rotate 1s linear infinite ;
-            }
-            @keyframes rotate {
-                0%{
-                    transform: rotate(0deg);
-                }
-                100%{
-                    transform: rotate(360deg);
-                }
-            }
-            #waitingSpinner{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-            }
-            #outputContainer{
-                display: none;
-                justify-content: center;
-                align-items: center;
-                min-height: 70vh;
-                margin-bottom: 50px;
-            }
-            section{
-                background-color: #f1f2f6;
-                min-width: 300px;
-                width: 1100px;
-                min-height: 500px;
-                margin: 30px;
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
-                flex-wrap: wrap;
-                padding: 20px;
-            }
-            img{
-                max-width: 280px;
-                max-height: 400px;
-            }
-            .output{
-                display: flex;
-                flex-direction: column;
-                max-width: 300px;
-            }
-            .output h1{
-                margin: 20px;
-                text-align: center;
-            }
-            #detectionresult h2{
-                padding: 5px 20px;
-                text-align: center;
-                margin: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>
-                <a href="/">
-                    SKIN DISEASE DETECTION</a
-                >
-            </h1>
-            <nav>
-                <a href="/about">About</a>
-                <a href="/analytics">Analytics</a>
-            </nav>
-        </header>
-        <div id="inputContainer">
-            <form onsubmit="SubmitFile(event)">
-                <label for="file"><i class="fas fa-upload"></i> <span id="fileName"> Upload Your Image  </span></label>
-                <input
-                    type="file"
-                    name="file"
-                    id="file"
-                    placeholder="Upload Image Here"
-                    required
-                    onchange="UpdateFile_name()"
-                />
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-        <div id="outputContainer">
-            <section>
-                <div class="image">
-                    <img id="image" src="{{url_for('static',filename='images/data/1649516829306.jpg')}}" alt="">
-                </div>
-                <div class="output">
-                    <h1>Output</h1>
-                    <div id="detectionresult">
-                        <div id="waitingSpinner">
-                            <div class="spinner"></div>
-                            <p style="margin: 10px 0 0 0;">We are Working</p>
-                            <p>please wait ....</p>
-                        </div>
-                        <!-- <h2 class="red">
+        }
+
+        #waitingSpinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #outputContainer {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+            margin-bottom: 50px;
+        }
+
+        section {
+            background-color: #f1f2f6;
+            min-width: 300px;
+            width: 1100px;
+            min-height: 500px;
+            margin: 30px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 280px;
+            max-height: 400px;
+        }
+
+        .output {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+
+        .output h1 {
+            margin: 20px;
+            text-align: center;
+        }
+
+        #detectionresult h2 {
+            padding: 5px 20px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #detectionresult h4 {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="/">
+                SKIN DISEASE DETECTION</a>
+        </h1>
+        <nav>
+            <a href="/about">About</a>
+            <a href="/analytics">Analytics</a>
+        </nav>
+    </header>
+    <div id="inputContainer">
+        <form onsubmit="SubmitFile(event)">
+            <label for="file"><i class="fas fa-upload"></i> <span id="fileName"> Upload Your Image </span></label>
+            <input type="file" name="file" id="file" placeholder="Upload Image Here" required
+                onchange="UpdateFile_name()" />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="outputContainer">
+        <section>
+            <div class="image">
+                <img id="image" src="{{url_for('static',filename='images/data/1649516829306.jpg')}}" alt="">
+            </div>
+            <div class="output">
+                <h1>Output</h1>
+                <div id="detectionresult">
+                    <div id="waitingSpinner">
+                        <div class="spinner"></div>
+                        <p style="margin: 10px 0 0 0;">We are Working</p>
+                        <p>please wait ....</p>
+                    </div>
+                    <!-- <h2 class="red">
                             DETECTED
                         </h2>
                         <h2 class="green">
@@ -245,19 +282,20 @@
                         <h4>gjkags adf aisudhjhsf s dfsjkfjs dfgsjkd sfks asja asd</h4>
                         <h4>gjkags adf aisudhjhsf s dfsjkfjs dfgsjkd sfks asja asd</h4>
                         <h4>gjkags adf aisudhjhsf s dfsjkfjs dfgsjkd sfks asja asd</h4> -->
-                    </div>
                 </div>
-            </section>
-        </div>
-        <div id="loader">
-            <div class="loader">
-                <div class="spinner"></div>
-                <p>please wait ....</p>
             </div>
+        </section>
+    </div>
+    <div id="loader">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>please wait ....</p>
         </div>
-        <footer>PILLAI COLLEGE OF ENGINEERING</footer>
-    </body>
-    <script>
-       
-    </script>
+    </div>
+    <footer>PILLAI COLLEGE OF ENGINEERING</footer>
+</body>
+<script>
+
+</script>
+
 </html>

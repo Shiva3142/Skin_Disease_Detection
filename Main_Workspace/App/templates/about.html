@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skin Disease Detection</title>
+  <style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      color: black;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    a,
+    button,
+    label,
+    span {
+      cursor: pointer;
+    }
+
+    body {
+      background: url('https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat fixed;
+      background-size: cover;
+      font-size: 1em;
+    }
+
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      padding: 20px;
+      border: 1px solid gray;
+      background-color: aliceblue;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+    }
+
+    nav {
+      min-width: 300px;
+      display: flex;
+      justify-content: space-evenly;
+      /* margin: 15px 0 0 0; */
+      font-size: 1.5em;
+    }
+
+    footer {
+      background-color: #636e72;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.5em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    aside {
+      position: absolute;
+      bottom: 3em;
+      right: 0;
+      z-index: 1;
+      /* background-color: #222f3e; */
+      padding: 10px;
+      font-size: 1.2em;
+      /* color: white; */
+    }
+
+    aside li {
+      margin-left: 20px;
+      margin-top: 5px;
+      /* color: #c8d6e5; */
+    }
+
+    @media screen and (max-width:768px) {
+      body {
+        font-size: 0.5em;
+      }
+
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+  <style>
+    section {
+      background: whitesmoke;
+      max-width: 1300px;
+      margin: 20px auto;
+      padding: 20px;
+      font-size: 1.2em;
+      word-wrap: break-word;
+    }
+
+    @media screen and (max-width:768px) {
+      section {
+        background: white;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1><a href="/"> SKIN DISEASE DETECTION</a></h1>
+    <nav>
+      <a href="/about">About</a>
+      <a href="/analytics">Analytics</a>
+    </nav>
+  </header>
+
+  <section>
+
+    <pre>
+
+    (1)Acne:Acne is a very common skin condition that causes pimples mostly on the face, 
+    forehead, chest, shoulders and upper back. 
+    80% of people ages 11 to 30 will have at least a mild form of acne, and most people are 
+    affected by it at some point in their lives.
+
+Causes:1)Fluctuating hormone levels around the time of a woman’s period.
+    2)Picking at acne sores.
+    3)Clothing and headgear, like hats and sports helmets.
+    4)Air pollution and certain weather conditions, especially high humidity.
+    5)Using oily or greasy personal care products,Stress which increases the hormone cortisol, 
+    can also cause acne to flare.
+    6)Some medications.
+    7)Genetics.
+
+Cure:1)For mild:Benzoyl peroxide- This ingredient helps dry out existing pimples, prevents new 
+ones from forming, and kills acne-causing bacteria.
+             Salicylic acid- This ingredient helps exfoliate your skin to prevent pores from 
+             getting clogged with acne-causing bacteria
+  2)For moderate:prescription-strength benzoyl peroxide
+                 antibiotics, like erythromycin or clindamycin
+                 retinoids, such as retinol
+  3)For Severe:1)oral antibiotics
+               2)benzoyl peroxide
+               3)topical antibiotics
+               4)topical retinoids
+
+Home Remedies:1)Apply aloe vera.
+           2)Use a honey mask.
+
+Prevention:1)Wash your face daily with warm water and a mild facial cleanser.
+        2)Routinely use moisturizer.
+        3)Keep your hands away from your face.
+       
+
+(2)Rosacea:Rosacea is a common skin condition that causes blushing or flushing and 
+visible blood 
+vessels in your face. 
+        It may also produce small, pus-filled bumps. These signs and symptoms may flare 
+        up for weeks to months and then go away for a while.
+
+Causes:1)Rosacea often runs in families.
+    2)Blood vessel trouble- The redness on your skin might be due to problems with 
+    blood vessels in your face. 
+      Sun damage could cause them to get wider, which makes it easier for other people 
+      to see them.
+    3)Mites- They're tiny insects. A type called Demodex folliculorum normally lives on 
+    your skin and usually isn't harmful. 
+      Some people, though, have a heightened sensitivity to the mites, or more of these 
+      bugs than usual.Too many mites could irritate your skin.
+    4)eating spicy foods,eating items that contain the compound cinnamaldehyde, such as 
+    cinnamon, chocolate, tomatoes, and citrus
+
+Cure:1)Brimonidine (Mirvaso), a gel that tightens blood vessels in the skin to get rid 
+of some of your redness.
+  2)Azelaic acid, a gel and foam that clears up bumps, swelling, and redness.
+
+Prevention:1)Avoid rubbing or touching the face.
+        2)Wash the face with a gentle cleanser, and avoid using products that contain 
+        irritants or alcohol.
+        3)Avoid comedogenic products. These block the oil and sweat gland openings.
+        4)Keep the skin hydrated with a gentle moisturizer. Wait for topical 
+        medications to dry before moisturizing.
+        5)Avoid extreme temperatures.
+        6)Avoid foods and beverages that might trigger an outbreak.
+
+(3)Atopic Dematitis:Atopic dermatitis (eczema) is a condition that makes your skin red 
+and itchy. 
+                 It's common in children but can occur at any age. Atopic dermatitis is 
+                 long lasting (chronic) and tends to flare periodically. 
+                 It may be accompanied by asthma or hay fever.
+
+Causes:The exact cause of AD is unknown. AD isn’t contagious, so you can’t give the 
+rash to someone else.
+    The basic understanding of AD is that inflammation results from a misdirected 
+    immune reaction. 
+    This immune reaction causes too many inflammatory cells in your skin, and these 
+    cause many of AD’s symptoms.
+
+Cure:Topical corticosteroids like hydrocortisone can help reduce inflammation and 
+itchiness.They come in forms such as:
+  1)gels
+  2)creams
+  3)lotions
+  4)ointments
+
+Prevention:1)The best preventive measure is to moisturize your skin. 
+
+(4)Actinic Keratosis:An actinic keratosis is a rough, scaly patch on the skin that 
+develops from years of sun exposure. 
+                  It's often found on the face, lips, ears, forearms, scalp, neck or 
+                  back of the hands.
+
+Causes:An actinic keratosis is caused by frequent or intense exposure to UV rays from 
+the sun or tanning beds.
+
+Cure:1)Freezing (cryotherapy). 
+  2)Scraping (curettage). 
+  3)Laser therapy. 
+  4)Photodynamic therapy. 
+
+Prevention:1)Limit your time in sun.
+        2)Use sunscreen.
+        3)Avoid tanning beds.
+
+(5)Bullous Disease:Bullous pemphigoid (BUL-us PEM-fih-goid) is a rare skin condition 
+that causes large, fluid-filled blisters. 
+                They develop on areas of skin that often flex — such as the lower 
+                abdomen, upper thighs or armpits. Bullous pemphigoid is most common in 
+                older adults.
+
+Causes:Bullous pemphigoid is an autoimmune disorder. That means it occurs when the 
+body’s own immune system attacks the layer of tissue below the top layer of skin. 
+    The reasons for this attack are not known, but bullous pemphigoid can sometimes be 
+    triggered by certain medications, including penicillamine.
+
+Cure:Bullous pemphigoid is most commonly treated with corticosteroids. 
+  These can be taken by mouth in addition to topically applied creams. 
+  Antibiotics or other anti-inflammatory medications may also be useful in mild cases. 
+  Severe cases may require the use of immunosuppressant medications.
+
+Prevention:1)Avoid sun exposure. 
+        2)Avoid prolonged sun exposure on any area of the skin affected by bullous 
+        pemphigoid. 
+        3)Dress in loosefitting cotton clothes. This helps protect your skin.
+
+(6)Cellulitis Impetigo:Impetigo is a common and highly contagious skin infection that 
+mainly affects infants and young children. 
+           It usually appears as reddish sores on the face, especially around the nose 
+           and mouth and on the hands and feet. 
+           Over about a week, the sores burst and develop honey-colored crusts.
+
+Causes:Impetigo is caused by bacteria, usually staphylococci organisms.
+
+Cure:Impetigo is treated with prescription mupirocin antibiotic ointment or cream 
+applied directly to the sores two to three times a day for five to 10 days.
+
+Prevention:Keeping skin clean is the best way to keep it healthy. It's important to 
+wash cuts, scrapes, insect bites and other wounds right away.
+
+(7)Eczema:Eczema is a condition in which patches of skin become inflamed, itchy, 
+cracked, and rough. Some types can also cause blisters.
+
+Causes:It develops from a combination of genetic and environmental factors.
+
+Cure:1)Topical corticosteroid creams and ointments: 
+ 2)Oral medications
+ 3)Antibiotics
+ 4)Phototherapy
+
+Prevention:1)Applying moisturizer within 3 minutes of bathing to “lock in” moisture
+        2)moisturizing every day
+        3)wearing cotton and soft fabrics    
+        4)avoiding rough, scratchy fibers and tight fitting clothing
+        5)using a humidifier in dry or cold weather
+
+(8) Exanthem:An exanthem is a rash or eruption on the skin. 
+         "Viral" means that the rash or eruption is a symptom of an infection due to a 
+         virus. 
+          Viral exanthems can be caused by many viruses, such as enteroviruses, 
+          adenovirus, chickenpox, measles, rubella, mononucleosis, and certain types of 
+          herpes infection.
+
+Causes:Exanthems are usually caused by viral or bacterial infections. They can also be 
+caused by drugs, toxins, or autoimmune diseases. 
+
+Cure:1)Antibiotics for treating bacterial infections. 
+  2)Calamine lotion (to relieve itching) Antiviral drugs (for severe cases) Rest.
+
+Prevention:1)Avoid scrubbing your skin.
+        2)Use gentle cleansers.
+        3)Avoid applying cosmetic lotions or ointments directly on the rash.
+        4)Use warm (not hot) water for cleaning. ...
+        5)Leave the affected area exposed to the air as much as possible.
+
+(9)Alopecia:Alopecia areata is a common autoimmune disorder that often results in 
+unpredictable hair loss.
+
+Causes:The condition occurs when white blood cells attack the cells in hair follicles, 
+causing them to shrink and dramatically slow down hair production.
+
+Cure:use of corticosteroids, powerful anti-inflammatory drugs that can suppress the 
+immune system. 
+  These are mostly commonly administered through local injections, topical ointment 
+  application, or orally.
+
+Prevention:1)Avoid hairstyles that pull on the hair.
+        2)Avoid high-heat hair styling tools.
+        3)Don’t chemically treat or bleach your hair.
+        Use a shampoo that’s mild and suited for your hair.
+
+(10)Herpes:herpes is common sexually transmitted infections that can affect a person’s 
+skin.
+
+Causes:Herpes infections are caused by herpes simplex virus (HSV) types 1 and 2. These 
+viruses are contagious and transmitted from one person to another through skin-to-skin 
+contact. 
+           Kissing or touching is the main cause of HSV-1 transmission, and sexual 
+           contact is the main cause of HSV-2 transmission. 
+
+Cure:a person can take medication to shorten outbreaks reduce their frequency
+
+Prevention:1)wearing loose clothing can help reduce irritation from blisters
+        2)keeping skin clean and dry supports the healing of sores
+        3)taking anti-herpes medication every day
+        4)avoiding sexual contact during outbreaks
+
+(11)HPV:HPV is common sexually transmitted infections that can affect a person’s skin.
+
+Causes:By having vaginal, anal, or oral sex with someone who has the virus. 
+    It is most commonly spread during vaginal or anal sex. It also spreads through 
+    close skin-to-skin touching during sex. 
+
+Cure:medication for genital warts, health checks for high-risk HPV	
+
+Prevention:1)using a condom or dental dam during every sexual encounter, including oral 
+sex.
+
+(12)Lupus:Lupus is a disease that occurs when your body's immune system attacks your 
+own tissues and organs (autoimmune disease). 
+       Inflammation caused by lupus can affect many different body systems — including 
+       your joints, skin, kidneys, blood cells, brain, heart and lungs,
+
+Causes:1)Lupus is an autoimmune condition, but the exact cause is unclear.
+    2)There may be a genetic factor to lupus. If you have family members who have 
+    lupus, your risk of the disease is increased.
+
+Cure:Common treatments for lupus include:
+  1)Hydroxychloroquine: This is an antimalarial drug that treats rashes and arthritis 
+  symptoms in lupus.
+  2)Belimumab: This is a biological agent approved by the Food and Drug Administration 
+  (FDA) to treat SLE(Systemic lupus erythematosus).
+
+Prevention:1)Avoiding sun exposure.
+        2)Staying in motion like do exercise.
+        3)Maintaining healthy habits
+
+(13)Melanoma:Melanoma is the most serious type of skin cancer, develops in the cells 
+(melanocytes) that produce melanin — the pigment that gives your skin its color. 
+          Melanoma can also form in your eyes and, rarely, inside your body, such as in 
+          your nose or throat.
+
+Causes:Melanoma occurs when something goes wrong in the melanin-producing cells 
+(melanocytes) that give color to your skin. eg(DNA Damage).
+
+Cure:1)Surgery to remove affected lymph nodes. 
+  2)Immunotherapy
+  3)Targeted therapy 
+  4)Radiation therapy 
+  5)Chemotherapy
+
+Prevention:1)Avoid the sun during the middle of the day. 
+        2)Wear sunscreen  
+        3)Wear protective clothing. 
+        4)Avoid tanning lamps and beds. Tanning lamps and beds emit UV rays and can 
+        increase your risk of skin cancer.
+        5)Become familiar with your skin so that you'll notice changes. 
+
+(14)Moles:Moles are small lesions in the skin.Moles are usually brownish, but some may 
+be much darker, while others are skin-colored. They can be rough, flat, raised, and 
+have hair growing out of them. 
+       They are generally round or oval, and have a smooth edge.
+
+Causes:1)when cells in the skin called melanocytes grow in clusters. 
+
+Cure:1)The majority of moles are harmless and require no treatment.
+    2)for harmful it is surgically removed by Shave excision and Excisional surgery 
+    (excision biopsy).
+
+Prevention:1)using sunscreens with SPF (sun protection factor) 50
+        2)using wide-brimmed hats (6 inches)
+        3)using sun-protective clothing (shirts, long sleeves, long pants)
+        4)avoiding peak sun hours of 10 a.m. to 4 p.m.
+        5)seeking shade and staying indoors.
+
+(15)Nail Fungus:Nail fungus is a common condition that begins as a white or yellow spot 
+under the tip of your fingernail or toenail. 
+             As the fungal infection goes deeper, nail fungus may cause your nail to 
+             discolor, thicken and crumble at the edge. It can affect several nails.
+
+Causes:1)Fungal nail infections are caused by various fungal organisms (fungi). The 
+most common cause is a type of fungus called dermatophyte. 
+    2)Yeast and molds also can cause nail infections.
+
+Cure:1)Oral antifungal drugs like terbinafine (Lamisil) and itraconazole (Sporanox).
+  2)Medicated nail polish. Your doctor may prescribe an antifungal nail polish called 
+  ciclopirox (Penlac). 
+  3)Medicated nail cream. Your doctor may prescribe an antifungal cream.
+
+Prevention:1)Wash your hands and feet regularly. Wash your hands after touching an 
+infected nail. Moisturize your nails after washing.
+        2)Trim nails straight across, smooth the edges with a file and file down 
+        thickened areas. Disinfect your nail clippers after each use.
+        3)Wear sweat-absorbing socks or change your socks throughout the day.
+        4)Choose shoes made of materials that breathe.
+
+(16)Poision ivy Contact dermatitis:Contact dermatitis is a red, itchy rash caused by 
+direct contact with a substance or an allergic reaction to it.
+                                The rash isn't contagious or life-threatening, but it 
+                                can be very uncomfortable.
+
+Causes:Contact dermatitis is caused by a substance you're exposed to that irritates 
+your skin or triggers an allergic reaction. 
+    The substance could be one of thousands of known allergens and irritants.
+
+Cure:1)Steroid creams or ointments. 
+  2)Oral medications. 
+
+Prevention:1)Avoid irritants and allergens. 
+2)Wash your skin. 
+3)Wear protective clothing or gloves. 
+4)Apply a barrier cream or gel. 
+5)Use moisturizer. 
+6)Take care around pets. Allergens from plants, such as poison ivy, can cling to pets 
+and then be spread to people.
+
+(17)Psoriasis and Lichen Planus: lichen planus and psoriasis can cause patches of scaly 
+bumps or rashes on the skin. 
+                              Lichen planus is a common inflammatory skin condition. It 
+                              is not contagious and not a sign of cancer. It appears as 
+                              firm, shiny, reddish bumps.
+                              Psoriasis is the most common autoimmune condition in the 
+                              United States. It is also not contagious or a sign of 
+                              cancer.
+Causes:1)Psoriasis is an autoimmune condition.
+    2)The cause of lichen planus is usually not known, although possible causes 
+    include: Hepatitis C, a virus that attacks your liver. 
+      Certain medicines, including some drugs used to treat high blood pressure, 
+      diabetes, heart disease, and malaria. Reactions to metal fillings in your teeth.
+
+Cure:1)Lichen planus does not usually require treatment. It often goes away by itself 
+within a year.
+    If a person has particularly itchy or painful outbreaks, a doctor may prescribe 
+    topical corticosteroids or light therapy.
+  2)For psoriasis: a)topical treatments
+                   b)oral treatments
+                   c)light therapy
+                   d)systemic treatments, which are drugs that work throughout the body
+                   e)biologic drug therapy
+
+Prevention:1)For lichen planus:Avoid injuries to your skin. Apply cool compresses 
+instead of scratching. Limit the stress in your life.
+        2)For Psoriasis:a)Use Moisturizing Lotions
+                        b)Take Care of Your Skin and Scalp
+                        c)Avoid Dry, Cold Weather
+                        d)Use a Humidifier
+                        e)Avoid Medications That Cause Flare-Ups
+
+(18)Scabies and Lyme Disease :Scabies is an itchy skin condition caused by a tiny 
+burrowing mite called Sarcoptes scabiei. Intense itching occurs in the area where the 
+mite burrows.
+                           Lyme disease is transmitted by the bite of an infected 
+                           black-legged tick, commonly known as a deer tick.
+
+Causes:1)Human scabies is caused by an infestation of the skin by the human itch mite 
+(Sarcoptes scabiei var. hominis)
+    2)Lyme disease is caused by the bacteria Borrelia burgdorferi and Borrelia mayonii, 
+    carried primarily by black-legged or deer ticks. 
+
+Cure:1)Several creams and lotions are available with a doctor's prescription.
+  2)Antibiotics are used to treat Lyme disease.
+
+Prevention:1)Cover up. When in wooded or grassy areas, wear shoes, long pants tucked 
+into your socks, a long-sleeved shirt, a hat and gloves. 
+        2)Use insect repellents.
+        3)Do your best to tick-proof your yard. Clear brush and leaves where ticks 
+        live. 
+        4)Check your clothing, yourself, your children and your pets for ticks.
+
+(19)seborrheic keratosis and benign tumor: A seborrheic keratosis is a common 
+noncancerous (benign) skin growth. People tend to get more of them as they get older.
+                                        Seborrheic keratoses are usually brown, black 
+                                        or light tan. The growths (lesions) look waxy 
+                                        or scaly and slightly raised. 
+                                        Benign tumors are noncancerous growths in the 
+                                        body. Unlike cancerous tumors, they don’t 
+                                        spread (metastasize) to other parts of the 
+                                        body. 
+
+Causes:1)Experts don't completely understand what causes a seborrheic keratosis. This 
+type of skin growth does tend to run in families, so there is likely an inherited 
+tendency.
+    2)The exact cause of a benign tumor is often unknown. It develops when cells in the 
+    body divide and grow at an excessive rate.
+
+Cure:1)A seborrheic keratosis typically doesn't go away on its own, but treatment isn't 
+needed. You might choose to have it removed if it becomes irritated or bleeds
+  2)For benign tumor: Medicated gels or creams may help reduce some tumors, such as 
+  hemangiomas.
+
+Prevention:1)There is no way to completely prevent the development of seborrheic 
+keratoses.
+        2)Surgery is a common type of treatment for benign tumors.
+
+(20)Systemic Diseases:A systemic disease are disorder that can affect a few organs and 
+tissues or even the whole body.
+
+Causes:
+
+Cure:
+
+Prevention:
+
+(21)Tinea Ringworm and Candidiasis:Ringworm of the body (tinea corporis) is a rash 
+caused by a fungal infection. It's usually an itchy, circular rash with clearer skin in 
+the middle. Ringworm gets its name because of its appearance.
+                                Candidiasis is a fungal infection caused by a yeast (a 
+                                type of fungus) called Candida.
+
+Cause:1)Ringworm is a contagious fungal infection caused by common mold-like parasites 
+that live on the cells in the outer layer of your skin.
+   2)It is cause by yeast.
+
+Cure:For ringworm:lotion, cream or ointment apply to the affected skin.
+  For Candidiasis:antifungal treatment.
+
+Prevention:1)Keep clean. Wash your hands often. 
+        2)Stay cool and dry. Don't wear thick clothing for long periods of time in 
+        warm, humid weather. Avoid excessive sweating.
+        3)Avoid infected animals. 
+        4)Don't share personal items. Don't let others use your clothing, towels, 
+        hairbrushes, sports gear or other personal items. And don't borrow such things.
+
+(22)Urticaria Hives:Hives (urticaria) are red, itchy welts that result from a skin 
+reaction. The welts vary in size and appear and fade repeatedly as the reaction runs 
+its course.
+                 The condition is considered chronic hives if the welts appear for more 
+                 than six weeks and recur frequently over months or years. 
+
+Causes:The welts that come with hives arise when certain cells release histamine and 
+other chemicals into your bloodstream.
+
+Cure:1)Antihistamines
+  2)Anti-inflammation medications
+
+Prevention:1)Avoid scratching or rubbing the skin.
+        2)Avoid being in high-humidity areas or wearing tight clothing if you have 
+        recently had a hives outbreak.
+
+(23)Vascular Tumor:A vascular tumor is a tumor of vascular origin; a soft tissue growth 
+that can be either benign or malignant, formed from blood vessels or lymph vessels.
+
+Causes:A range of benign vascular tumors are described as reactive proliferative 
+lesions that grow in response to a stimulus, such as trauma, or a local thrombosis.
+
+Cure:1)Beta-blocker therapy. Beta-blockers are drugs that decrease blood pressure and 
+heart rate
+  2)Surgery. The following types of surgery may be used to remove many types of 
+  vascular tumors
+       Photocoagulation
+       Cryotherapy
+       Embolization
+       Chemotherapy
+       Sclerotherapy
+       Radiation therapy
+
+Prevention:
+
+(24)Vasculitis: It involves inflammation of the blood vessels. 
+             The inflammation can cause the walls of the blood vessels to thicken, 
+             which reduces the width of the passageway through the vessel. 
+             If blood flow is restricted, it can result in organ and tissue damage.
+
+Causes: It happens when the body's immune system attacks the blood vessel by mistake. 
+It can happen because of an infection, a medicine, or another disease.
+
+Cure:A corticosteroid drug, such as prednisone, is the most common type of drug 
+prescribed to control the inflammation associated with vasculitis.
+
+Prevention:Choose a healthy diet. Eating well can help prevent potential problems.
+
+(25)Warts Molluscum:Molluscum contagiosum is a relatively common viral infection of the 
+skin that results in round, firm, painless bumps ranging in size from a pinhead to a 
+pencil eraser.
+                 If the bumps are scratched or injured, the infection can spread to 
+                 surrounding skin. 
+                 Molluscum contagiosum also spreads through person-to-person contact 
+                 and contact with infected objects.
+
+Causes:It causes by virus poxvirus.
+
+Cure:1)Scraping
+  2)Freezing (cryotherapy)
+  3)A medicine that causes blisters (cantharidin), which lift off the bumps.
+
+Prevention:1)Wash your hands. Keeping your hands clean can help prevent spreading the 
+virus.
+        2)Avoid touching the bumps. Shaving over the infected areas also can spread the 
+        virus.
+        3)Don't share personal items. This includes clothing, towels, hairbrushes or 
+        other personal items. 
+        4)Avoid sexual contact.
+
+           
+    </pre>
+
+
+
+
+
+
+  </section>
+
+
+
+  <footer>
+    PILLAI COLLEGE OF ENGINEERING
+  </footer>
+</body>
+
+</html>

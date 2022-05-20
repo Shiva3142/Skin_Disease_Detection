@@ -70,9 +70,9 @@ async function SubmitFile(event) {
     } else {
         window.alert("Please Select File Frst");
     }
-    setTimeout(() => {
+    // setTimeout(() => {
         loader.style.display = "none";
-    }, 1000);
+    // }, 1000);
 }
 
 function UpdateFile_name(event) {

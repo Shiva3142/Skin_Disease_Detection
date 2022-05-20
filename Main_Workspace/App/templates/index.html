@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,9 @@
     <title>Skin Disease Detection</title>
     <style>
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -19,15 +20,21 @@
             text-decoration: none;
             list-style: none;
         }
-        a,button,label,span{
+
+        a,
+        button,
+        label,
+        span {
             cursor: pointer;
         }
-        body{
+
+        body {
             background: url('https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat fixed;
             background-size: cover;
             font-size: 1em;
         }
-        header{
+
+        header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
@@ -36,17 +43,20 @@
             border: 1px solid gray;
             background-color: aliceblue;
         }
-        header h1{
+
+        header h1 {
             font-size: 2.5em;
         }
-        nav{
+
+        nav {
             min-width: 300px;
             display: flex;
             justify-content: space-evenly;
             /* margin: 15px 0 0 0; */
             font-size: 1.5em;
         }
-        footer{
+
+        footer {
             background-color: #636e72;
             color: white;
             text-align: center;
@@ -56,35 +66,50 @@
             bottom: 0;
             width: 100%;
         }
-        aside{
+
+        aside {
             position: absolute;
             bottom: 3em;
             right: 0;
             z-index: 1;
             /* background-color: #222f3e; */
             padding: 10px;
-            font-size:1.2em;
+            font-size: 1.2em;
             /* color: white; */
         }
-        aside li{
+
+        aside li {
             margin-left: 20px;
             margin-top: 5px;
             /* color: #c8d6e5; */
         }
+
         @media screen and (max-width:768px) {
-            body{
+            body {
                 font-size: 0.5em;
+            }
+
+            header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            nav {
+                margin-top: 10px;
             }
         }
     </style>
     <style>
-        .section{
+        .section {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 70vh;
         }
-        section{
+
+        section {
             /* width: 300px; */
             max-width: 500px;
             margin: auto 20px;
@@ -92,12 +117,16 @@
             border-radius: 10px;
             font-size: 1.5em;
         }
-        section h1,section h3,section div{
+
+        section h1,
+        section h3,
+        section div {
             color: white;
             padding: 20px;
             text-align: center;
         }
-        section button{
+
+        section button {
             padding: 5px 10px;
             margin: 10px;
             border-radius: 10px;
@@ -105,11 +134,13 @@
             background-color: royalblue;
             color: white;
         }
-        section a{
+
+        section a {
             color: white;
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1><a href="/"> SKIN DISEASE DETECTION</a></h1>
@@ -122,7 +153,7 @@
         <section>
             <h1>Welcome to you</h1>
             <h3>This Project is Created based on Deep Learning concepts using CNN</h3>
-            <div>For Skin disease Detection page 
+            <div>For Skin disease Detection page
                 <!-- <button><a href="/Main_Workspace/App/templates/detection.html"> Click Here</a></button> -->
                 <button><a href="/detection"> Click Here</a></button>
             </div>
@@ -141,4 +172,5 @@
         PILLAI COLLEGE OF ENGINEERING
     </footer>
 </body>
+
 </html>
