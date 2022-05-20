@@ -1,3 +1,7 @@
 Data
 *.env
-.Temp_Workspace
+Temp_Workspace
+*.h5
+*.pickle
+
+*.txt
